@@ -22,6 +22,7 @@ public class WithParamBotHandlerSendApplier extends AbstractBotHandlerApplier<Se
         super(applicationContext);
     }
 
+
     @Override
     public SendMessage apply(String url) {
         var handler = defineHandler(url);
