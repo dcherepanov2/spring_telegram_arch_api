@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.function.Predicate;
-import com.example.spring.telegram.wrapper.exceptions.ApplierNotFoundException;
+import com.example.spring.telegram.wrapper.exception.ApplierNotFoundException;
 
 
 @Getter
@@ -32,7 +32,7 @@ public enum BotStrategyType {
     public static BotStrategyType defineStrategyType(String url) {
         return Arrays.stream(values())
                 .filter(strategy -> strategy.isSuitable.test(url))
-                .findFirst()
+                .findAny()
                 .orElseThrow(ApplierNotFoundException::new);
     }
 }
