@@ -12,10 +12,9 @@ import static com.example.spring.telegram.wrapper.strategy.SenderStrategy.NO_SEN
 public class TestClassBotHandler {
 
     @BotRequestMapping(url = "/send-message", returnStrategy = NO_SEND)
-    public SendMessage testSendMessage(){
+    public void testSendMessage(){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setText("send-message-without-params");
-        return new SendMessage();
     }
 
     @BotRequestMapping(url = "/send-message-with-param")

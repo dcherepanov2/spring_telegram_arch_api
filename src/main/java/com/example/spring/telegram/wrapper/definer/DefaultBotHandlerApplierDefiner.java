@@ -15,9 +15,7 @@ public class DefaultBotHandlerApplierDefiner implements BotHandlerApplierDefiner
 
     private final Map<BotStrategyType, BotApplier<? extends BotApiMethod<?>>> appliers;
 
-    public DefaultBotHandlerApplierDefiner(
-            Map<BotStrategyType, BotApplier<? extends BotApiMethod<?>>> appliers
-    ) {
+    public DefaultBotHandlerApplierDefiner(Map<BotStrategyType, BotApplier<? extends BotApiMethod<?>>> appliers) {
         this.appliers = appliers;
     }
 
