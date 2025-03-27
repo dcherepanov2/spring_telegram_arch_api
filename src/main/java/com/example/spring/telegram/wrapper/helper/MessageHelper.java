@@ -1,4 +1,4 @@
-package com.example.spring.telegram.wrapper.definer;
+package com.example.spring.telegram.wrapper.helper;
 
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;

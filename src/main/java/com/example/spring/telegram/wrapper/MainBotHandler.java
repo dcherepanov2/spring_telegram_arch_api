@@ -18,7 +18,7 @@ public class MainBotHandler extends TelegramLongPollingBot {
     private final BotInvoker botInvoker;
     private final TelegramBotsApi telegramBotsApi;
 
-    @Value("${bot.token}")
+    @Value("${telegram.bot.token}")
     private String botToken;
 
     public MainBotHandler(BotInvoker botInvoker) throws TelegramApiException {

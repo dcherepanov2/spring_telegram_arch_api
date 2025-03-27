@@ -1,6 +1,7 @@
 package com.example.spring.telegram.wrapper.annotation;
 
 import com.example.spring.telegram.wrapper.config.*;
+import com.example.spring.telegram.wrapper.processor.before.chain.BeforeExecutionChain;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
@@ -11,10 +12,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Import({
-        BotApplierConfig.class,
-        BotHandlerScanner.class,
+        BotParamFillerConfig.class,
         BotInvokerConfig.class,
         BotHelperConfig.class,
+        RedisConfig.class,
+        BeforeExecutionConfig.class,
         MainBotHandlerConfig.class
 })
 public @interface TelegramBotHandlingEnabled {

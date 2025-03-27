@@ -1,18 +1,23 @@
 package com.example.spring.telegram.wrapper.config;
 
-import com.example.spring.telegram.wrapper.definer.BotHandlerApplierDefiner;
-import com.example.spring.telegram.wrapper.definer.MessageHelper;
+import com.example.spring.telegram.wrapper.creator.AnnotationParamCreateProcessor;
+import com.example.spring.telegram.wrapper.helper.BotHandlerHelper;
+import com.example.spring.telegram.wrapper.processor.before.BeforeExecutionProcessor;
 import com.example.spring.telegram.wrapper.runner.DefaultBotInvoker;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BotInvokerConfig {
 
-    private MessageHelper messageHelper;
+    private BotHandlerHelper botHandlerHelper;
+    private AnnotationParamCreateProcessor processor;
+    private final BeforeExecutionProcessor beforeExecutionProcessor;
 
-    private BotHandlerApplierDefiner defaultBotHandlerApplierDefiner;
+    public BotInvokerConfig(BeforeExecutionProcessor beforeExecutionProcessor) {
+        this.beforeExecutionProcessor = beforeExecutionProcessor;
+    }
 
     DefaultBotInvoker defaultBotInvoker(){
-        return new DefaultBotInvoker(defaultBotHandlerApplierDefiner, messageHelper);
+        return new DefaultBotInvoker(botHandlerHelper, processor, beforeExecutionProcessor);
     }
 }

@@ -6,9 +6,9 @@ import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 
 @Getter
 @AllArgsConstructor
-public class Message<T extends BotApiMethod<?>> {
+public class MessageResponse {
 
-    private final T message;
+    private final BotApiMethod<?> message;
 
     private final boolean isSend;
 }
