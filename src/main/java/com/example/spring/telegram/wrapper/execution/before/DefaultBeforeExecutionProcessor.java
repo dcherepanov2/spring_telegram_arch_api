@@ -1,9 +1,9 @@
-package com.example.spring.telegram.wrapper.processor.before;
+package com.example.spring.telegram.wrapper.execution.before;
 
 import com.example.spring.telegram.wrapper.domain.BeforeExecutionContext;
 import com.example.spring.telegram.wrapper.domain.BotHandlerContext;
 import com.example.spring.telegram.wrapper.helper.MessageHelper;
-import com.example.spring.telegram.wrapper.processor.before.chain.BeforeExecutionChain;
+import com.example.spring.telegram.wrapper.execution.before.chain.BeforeExecutionChain;
 import org.jvnet.hk2.annotations.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 

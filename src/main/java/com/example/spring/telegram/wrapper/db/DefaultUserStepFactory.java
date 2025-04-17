@@ -4,7 +4,6 @@ import com.example.spring.telegram.wrapper.db.repository.UserStepFactory;
 import com.example.spring.telegram.wrapper.db.service.UserStepService;
 import com.example.spring.telegram.wrapper.domain.user.step.H2UserStep;
 import com.example.spring.telegram.wrapper.domain.user.step.RedisUserStep;
-import com.example.spring.telegram.wrapper.domain.user.step.UserStep;
 import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Value;
 

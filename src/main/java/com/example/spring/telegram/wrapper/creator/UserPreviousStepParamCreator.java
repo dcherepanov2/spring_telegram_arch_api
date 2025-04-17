@@ -2,27 +2,25 @@ package com.example.spring.telegram.wrapper.creator;
 
 import com.example.spring.telegram.wrapper.annotation.BotParamCreator;
 import com.example.spring.telegram.wrapper.annotation.UserPreviousStep;
-import com.example.spring.telegram.wrapper.domain.user.step.RedisUserStep;
+import com.example.spring.telegram.wrapper.db.service.UserStepService;
 import com.example.spring.telegram.wrapper.domain.user.step.UserStep;
 import com.example.spring.telegram.wrapper.enumuration.UserPreviousStepFindStrategy;
 import com.example.spring.telegram.wrapper.helper.MessageHelper;
-import com.example.spring.telegram.wrapper.db.service.UserStepService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 @BotParamCreator(relationTo = UserPreviousStep.class)
 public class UserPreviousStepParamCreator implements BotParamCreatorChain {
 
-    private final UserStepService userStepService;
+    private final UserStepService<?> userStepService;
 
     private final MessageHelper messageHelper;
 
     public UserPreviousStepParamCreator(
-            UserStepService userStepService, MessageHelper messageHelper
+            UserStepService<?> userStepService, MessageHelper messageHelper
     ) {
         this.userStepService = userStepService;
         this.messageHelper = messageHelper;
@@ -32,7 +30,7 @@ public class UserPreviousStepParamCreator implements BotParamCreatorChain {
     public Object create(Update message, Parameter parameter) {
         String url = messageHelper.defineUrl(message);
         UserPreviousStepFindStrategy strategy = defineStrategy(parameter);
-        Optional<UserStep> userStep = userStepService.findByUrl(url, strategy);
+        Optional<? extends UserStep> userStep = userStepService.findByUrl(url, strategy);
         return userStep
                 .map(UserStep::getMessage)
                 .orElseThrow();

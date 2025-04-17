@@ -1,8 +1,6 @@
-package com.example.spring.telegram.wrapper.processor.before.chain;
+package com.example.spring.telegram.wrapper.execution.before.chain;
 
 import com.example.spring.telegram.wrapper.domain.BeforeExecutionContext;
-import com.example.spring.telegram.wrapper.domain.user.step.RedisUserStep;
-import com.example.spring.telegram.wrapper.helper.MessageHelper;
 import com.example.spring.telegram.wrapper.db.service.UserStepService;
 import org.jvnet.hk2.annotations.Service;
 

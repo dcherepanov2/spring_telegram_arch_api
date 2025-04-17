@@ -4,10 +4,10 @@ import com.example.spring.telegram.wrapper.db.repository.UserStepFactory;
 import com.example.spring.telegram.wrapper.db.service.UserStepService;
 import com.example.spring.telegram.wrapper.domain.user.step.UserStep;
 import com.example.spring.telegram.wrapper.helper.MessageHelper;
-import com.example.spring.telegram.wrapper.processor.before.BeforeExecutionProcessor;
-import com.example.spring.telegram.wrapper.processor.before.DefaultBeforeExecutionProcessor;
-import com.example.spring.telegram.wrapper.processor.before.chain.BeforeExecutionChain;
-import com.example.spring.telegram.wrapper.processor.before.chain.UserPreviousStepSaveBeforeExecutionChain;
+import com.example.spring.telegram.wrapper.execution.before.BeforeExecutionProcessor;
+import com.example.spring.telegram.wrapper.execution.before.DefaultBeforeExecutionProcessor;
+import com.example.spring.telegram.wrapper.execution.before.chain.BeforeExecutionChain;
+import com.example.spring.telegram.wrapper.execution.before.chain.UserPreviousStepSaveBeforeExecutionChain;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

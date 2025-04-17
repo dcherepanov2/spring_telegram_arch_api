@@ -5,8 +5,7 @@ import com.example.spring.telegram.wrapper.domain.BotHandlerContext;
 import com.example.spring.telegram.wrapper.domain.MessageResponse;
 import com.example.spring.telegram.wrapper.creator.AnnotationParamCreateProcessor;
 import com.example.spring.telegram.wrapper.helper.BotHandlerHelper;
-import com.example.spring.telegram.wrapper.processor.before.BeforeExecutionProcessor;
-import com.example.spring.telegram.wrapper.processor.before.chain.BeforeExecutionChain;
+import com.example.spring.telegram.wrapper.execution.before.BeforeExecutionProcessor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -39,7 +38,7 @@ public class DefaultBotInvoker implements BotInvoker {
         BotHandlerContext botHandlerContext = buildHandlerContext(message);
         beforeExecutionProcessor.process(botHandlerContext);
         MessageResponse messageResponse = invoke(botHandlerContext);
-        return messageResponse.isSend()? messageResponse.getMessage(): null;
+        return messageResponse.isSend()? messageResponse.message(): null;
     }
 
     private BotHandlerContext buildHandlerContext(Update message) {

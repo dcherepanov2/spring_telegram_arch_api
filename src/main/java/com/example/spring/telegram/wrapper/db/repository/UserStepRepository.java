@@ -12,5 +12,5 @@ import java.util.Optional;
 @NoRepositoryBean
 public interface UserStepRepository <T extends UserStep> extends CrudRepository<T, Long> {
 
-    Optional<List<RedisUserStep>> findByUrl(String url, UserPreviousStepFindStrategy strategy);
+    Optional<T> findByUrl(String url, UserPreviousStepFindStrategy strategy);
 }

@@ -40,7 +40,8 @@ public class DefaultAnnotationParamCreateProcessor implements AnnotationParamCre
                     .stream()
                     .map(Annotation::annotationType)
                     .map(createHandlerStrategyMap::get)
-                    .map(botParamCreatorChains -> botParamCreatorChains.create(message, parameterEntry.getKey()))
+                    .map(botParamCreatorChains ->
+                            botParamCreatorChains.create(message, parameterEntry.getKey()))
                     .toArray();
             params.addAll(Arrays.asList(array));
         }

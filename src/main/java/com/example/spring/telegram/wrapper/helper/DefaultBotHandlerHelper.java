@@ -23,7 +23,6 @@ public class DefaultBotHandlerHelper implements BotHandlerHelper {
         this.messageHelper = messageHelper;
     }
 
-    @SafeVarargs
     public final Method defineMethodBy(Update message, Class<? extends Annotation>... annotations) {
         return Optional.ofNullable(message)
                 .map(this::findSuitableHandler)

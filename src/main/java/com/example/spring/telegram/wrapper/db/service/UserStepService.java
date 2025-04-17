@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface UserStepService<T extends UserStep> {
 
-    Optional<List<RedisUserStep>> findByUrl(String url, UserPreviousStepFindStrategy strategy);
+    Optional<T> findByUrl(String url, UserPreviousStepFindStrategy strategy);
 
     void createByBeforeExecutionContext(BeforeExecutionContext context);
 }

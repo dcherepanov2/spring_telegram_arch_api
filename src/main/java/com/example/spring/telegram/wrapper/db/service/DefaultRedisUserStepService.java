@@ -2,12 +2,10 @@ package com.example.spring.telegram.wrapper.db.service;
 
 import com.example.spring.telegram.wrapper.db.repository.UserStepRepository;
 import com.example.spring.telegram.wrapper.domain.BeforeExecutionContext;
-import com.example.spring.telegram.wrapper.domain.user.step.H2UserStep;
 import com.example.spring.telegram.wrapper.domain.user.step.RedisUserStep;
 import com.example.spring.telegram.wrapper.enumuration.UserPreviousStepFindStrategy;
 import org.jvnet.hk2.annotations.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,7 +18,7 @@ public class DefaultRedisUserStepService implements UserStepService<RedisUserSte
     }
 
     @Override
-    public Optional<List<RedisUserStep>> findByUrl(String url, UserPreviousStepFindStrategy strategy) {
+    public Optional<RedisUserStep> findByUrl(String url, UserPreviousStepFindStrategy strategy) {
         return redisUserStepUserStepRepository.findByUrl(url, strategy);
     }
 

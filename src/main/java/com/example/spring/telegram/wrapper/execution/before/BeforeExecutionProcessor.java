@@ -1,4 +1,4 @@
-package com.example.spring.telegram.wrapper.processor.before;
+package com.example.spring.telegram.wrapper.execution.before;
 
 import com.example.spring.telegram.wrapper.domain.BotHandlerContext;
 
